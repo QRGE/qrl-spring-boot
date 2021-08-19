@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="qrl.spring.boot.shiro.mapper.UserMapper">
+    <resultMap id="basicResultMap" type="User">
+        <id column="id" property="id"/>
+        <result column="username" property="username"/>
+        <result column="password" property="password"/>
+        <result column="salt" property="salt"/>
+    </resultMap>
+    <insert id="save" useGeneratedKeys="true" keyProperty="id">
+        insert into shiro_user values(#{id}, #{username}, #{password}, #{salt})
+    </insert>
+
+    <select id="findByUsername" resultMap="basicResultMap">
+        select id, username, password, salt
+        from shiro_user
+        where username = #{username}
+    </select>
+</mapper>

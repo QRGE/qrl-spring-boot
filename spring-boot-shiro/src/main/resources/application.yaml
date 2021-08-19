@@ -1,0 +1,21 @@
+server:
+  port: 9000
+  servlet:
+    context-path: /shiro
+
+spring:
+  application:
+    name: shiro
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/springbootdemo?characterEncoding=UTF-8&useUnicode=true&serverTimezone=UTC
+    username: QR
+    password: QRWUDI666
+  mvc:
+    view:
+      prefix: /
+      suffix: .jsp
+mybatis:
+  type-aliases-package: qr.learn.spring.boot.shiro.entity
+  mapper-locations: classpath:mapper/*.xml
