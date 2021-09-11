@@ -10,6 +10,9 @@
         <module>spring-boot-shiro</module>
         <module>spring-bean</module>
         <module>spring-boot-redis</module>
+        <module>spring-boot-mybatis-plus</module>
+        <module>spring-boot-jeecg</module>
+        <module>spring-boot-quartz</module>
     </modules>
     <name>qrl-spring-boot</name>
     <description>学习 spring 及 spring-boot 的一些笔记和demo</description>
@@ -19,7 +22,27 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <spring-boot.version>2.3.7.RELEASE</spring-boot.version>
+        <mysql.version>8.0.22</mysql.version>
+        <!--第一家实习公司版本-->
+        <mybatis.plus.version>3.4.1</mybatis.plus.version>
+        <!--第一家实习公司版本-->
+        <javax.persistance.version>2.2</javax.persistance.version>
+        <springfox.version>2.9.2</springfox.version>
+        <lombok.version>1.18.20</lombok.version>
     </properties>
+
+    <repositories>
+        <repository>
+            <id>aliyun center</id>
+            <url>https://maven.aliyun.com/nexus/content/repositories/central</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
 
     <dependencies>
         <dependency>
@@ -54,9 +77,23 @@
             <scope>test</scope>
         </dependency>
         <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+        </dependency>
+        <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-annotation</artifactId>
+            <version>3.4.1</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 
@@ -68,6 +105,41 @@
                 <version>${spring-boot.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis.plus.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>javax.persistence</groupId>
+                <artifactId>javax.persistence-api</artifactId>
+                <version>${javax.persistance.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${springfox.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${springfox.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-generator</artifactId>
+                <version>${mybatis.plus.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

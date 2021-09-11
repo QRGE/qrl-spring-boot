@@ -1,0 +1,29 @@
+server:
+  port: 9000
+mybatis-plus:
+  # classpath*: 可以扫描多个 jar 包下的对应路径的 *Mapper.xml 文件
+  mapper-locations: classpath*:qrl/spring/boot/**/mapper/xml/*Mapper.xml
+  global-config:
+    # 取消启动项目时 mybatis-plus 的 banner 显示
+    banner: false
+  configuration:
+    # 执行时输出 sql
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    # mybatis的一级缓存, session 表示缓存会存储同一个session下的查询结果, STATEMENT 表示关闭一级缓存
+    # 单服务架构中, 一级缓存开启不会影响业务, 会提高性能;
+    # 微服务架构中需要关闭一级缓存，假如 Service1 先查询数据，若之后Service2修改了数据，之后Service1又再次以同样的查询条件查询数据，因走缓存会出现查处的数据不是最新数据
+    local-cache-scope: session
+    # mybatis的二级缓存, 默认为 true
+    # 启用二级缓存时，MyBatis要求返回的 POJO 必须是可序列化的。
+    cache-enabled: false
+    # MyBatis 在使用 resultMap 来映射查询结果中的列，如果查询结果中包含空值的列，则 MyBatis 在映射的时候，不会映射这个字段，但这可能导致在调用到该字段的时候由于没有映射，取不到而报空指针异常
+    # 注意基本类型 (int、boolean 等)是不能设置成 null 的
+    call-setters-on-nulls: true
+  #  MyBaits 别名包扫描路径，通过该属性可以给包中的类注册别名，注册后在 Mapper 对应的 XML 文件中可以直接使用类名，而不用使用全限定的类名
+  type-aliases-package: qrl.spring.boot.mybatis.plus.entity.po
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/springbootdemo?characterEncoding=UTF-8&useUnicode=true&useSSL=false&tinyInt1isBit=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Shanghai
+    username: QR
+    password: QRWUDI666
