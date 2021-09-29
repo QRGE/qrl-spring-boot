@@ -20,18 +20,20 @@ public class _03_data {
             JobDetail job = JobBuilder.newJob(HelloDataJob.class)
                     .withIdentity("jobA", "groupA")
                     .usingJobData("jobA-key-1", "jobA-value-1")
+                    .usingJobData("key", "JobValue")
                     .build();
             // trigger
             Trigger trigger = TriggerBuilder.newTrigger()
                     .withIdentity("triggerA", "groupA")
                     .startNow()
                     .usingJobData("triggerA-key-1", "triggerA-value-1")
-                    .withSchedule(CronScheduleBuilder.cronSchedule("0/5 * * * * ?"))
+                    .usingJobData("key", "TriggerValue")
+                    .withSchedule(CronScheduleBuilder.cronSchedule("0/1 * * * * ?"))
                     .build();
             scheduler.scheduleJob(job, trigger);
 
             // 睡眠 main 线程, quartz的线程池不受影响
-            TimeUnit.SECONDS.sleep(30);
+            TimeUnit.SECONDS.sleep(5);
             scheduler.shutdown();
         } catch (SchedulerException | InterruptedException e) {
             e.printStackTrace();

@@ -14,6 +14,42 @@
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
+        <jeecg.boot.version>2.4.5</jeecg.boot.version>
     </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.jeecgframework.boot</groupId>
+                <artifactId>jeecg-boot-starter-job</artifactId>
+                <version>${jeecg.boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jeecgframework.boot</groupId>
+                <artifactId>jeecg-boot-starter-lock</artifactId>
+                <version>${jeecg.boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jeecgframework.boot</groupId>
+                <artifactId>jeecg-boot-starter-rabbitmq</artifactId>
+                <version>${jeecg.boot.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.jeecgframework.boot</groupId>
+            <artifactId>jeecg-boot-starter-job</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.jeecgframework.boot</groupId>
+            <artifactId>jeecg-boot-starter-rabbitmq</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.jeecgframework.boot</groupId>
+            <artifactId>jeecg-boot-starter-lock</artifactId>
+        </dependency>
+    </dependencies>
 
 </project>

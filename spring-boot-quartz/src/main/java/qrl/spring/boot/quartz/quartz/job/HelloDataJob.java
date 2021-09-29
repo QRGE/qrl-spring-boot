@@ -21,5 +21,9 @@ public class HelloDataJob implements Job {
         System.out.println(out);
         System.out.println(jobDetail.getJobDataMap().get("jobA-key-1"));
         System.out.println(trigger.getJobDataMap().get("triggerA-key-1"));
+        // 合并的 jobDataMap 中在 job 的 DataMap 和 trigger 的 DataMap 中如果存在相同的key, trigger 的值优先级更高
+        // 即同 key 的情况下总会取 trigger 的 value
+        JobDataMap dataMap = context.getMergedJobDataMap();
+        System.out.println(dataMap.get("key"));
     }
 }

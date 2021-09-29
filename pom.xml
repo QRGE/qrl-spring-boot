@@ -13,7 +13,12 @@
         <module>spring-boot-mybatis-plus</module>
         <module>spring-boot-jeecg</module>
         <module>spring-boot-quartz</module>
+        <module>spring-boot-swagger</module>
+        <module>spring-boot-test</module>
+        <module>check</module>
+        <module>basic</module>
     </modules>
+
     <name>qrl-spring-boot</name>
     <description>学习 spring 及 spring-boot 的一些笔记和demo</description>
 
@@ -23,12 +28,12 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <spring-boot.version>2.3.7.RELEASE</spring-boot.version>
         <mysql.version>8.0.22</mysql.version>
-        <!--第一家实习公司版本-->
         <mybatis.plus.version>3.4.1</mybatis.plus.version>
-        <!--第一家实习公司版本-->
         <javax.persistance.version>2.2</javax.persistance.version>
         <springfox.version>2.9.2</springfox.version>
         <lombok.version>1.18.20</lombok.version>
+        <jsch.version>0.1.54</jsch.version>
+        <hibernate-validator>7.0.1.Final</hibernate-validator>
     </properties>
 
     <repositories>
@@ -42,19 +47,20 @@
                 <enabled>false</enabled>
             </snapshots>
         </repository>
+        <repository>
+            <id>jeecg</id>
+            <name>jeecg Repository</name>
+            <url>http://maven.jeecg.org/nexus/content/repositories/jeecg</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
     </repositories>
 
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
-            <scope>runtime</scope>
-            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -90,6 +96,11 @@
             <scope>test</scope>
         </dependency>
         <dependency>
+            <groupId>qr.learn</groupId>
+            <artifactId>basic</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-annotation</artifactId>
             <version>3.4.1</version>
@@ -99,6 +110,16 @@
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>org.hibernate.validator</groupId>
+                <artifactId>hibernate-validator</artifactId>
+                <version>${hibernate-validator}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.jcraft</groupId>
+                <artifactId>jsch</artifactId>
+                <version>${jsch.version}</version>
+            </dependency>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>

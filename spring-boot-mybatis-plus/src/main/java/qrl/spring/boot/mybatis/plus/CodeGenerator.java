@@ -4,8 +4,6 @@ import com.baomidou.mybatisplus.generator.AutoGenerator;
 import com.baomidou.mybatisplus.generator.config.*;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
-import org.yaml.snakeyaml.constructor.BaseConstructor;
-import qrl.spring.boot.mybatis.plus.controller.BaseController;
 
 /**
  * @Author: QR
@@ -16,21 +14,35 @@ public class CodeGenerator {
     /**
      * 项目路径
      */
-    private final static String projectPath = System.getProperty("user.dir");
+    private final static String PROJECT_PATH = System.getProperty("user.dir");
 
     /**
      * 需要生成的表
      */
-    private final static String[] tables = {
-            "bl_blog", "bl_blog_collection", "bl_blog_comment", "bl_blog_goods",
-            "bl_blog_tag", "bl_link", "bl_music", "bl_sys_log",
-            "bl_tag", "bl_type", "bl_user"
+    private final static String[] TABLES = {
+            "dtrd_ent_evaluation_rd_angiocardiopathy",
+            "dtrd_ent_evaluation_rd_bmq",
+            "dtrd_ent_evaluation_rd_diabetes",
+            "dtrd_ent_evaluation_rd_diabetic_foot",
+            "dtrd_ent_evaluation_rd_happy",
+            "dtrd_ent_evaluation_rd_job",
+            "dtrd_ent_evaluation_rd_mmas8",
+            "dtrd_ent_evaluation_rd_mmpi",
+            "dtrd_ent_evaluation_rd_nephropathy",
+            "dtrd_ent_evaluation_rd_neuropathy",
+            "dtrd_ent_evaluation_rd_personality",
+            "dtrd_ent_evaluation_rd_psychology",
+            "dtrd_ent_evaluation_rd_retinopathy",
+            "dtrd_ent_evaluation_rd_sas",
+            "dtrd_ent_evaluation_rd_sds",
+            "dtrd_ent_evaluation_rd_sdsca",
+            "dtrd_ent_evaluation_rd_sleep"
     };
 
     /**
-     * 表的前缀
+     * 模块名
      */
-    private final static String tablePrefix = "bl_";
+    private final static String MODULE_NAME = "evaluation";
 
     public static void main(String[] args) {
         // 代码生成器
@@ -38,7 +50,7 @@ public class CodeGenerator {
 
         // 全局配置
         GlobalConfig gc = new GlobalConfig();
-        gc.setOutputDir(projectPath + "/spring-boot-mybatis-plus/src/main/java");
+        gc.setOutputDir(PROJECT_PATH + "/spring-boot-mybatis-plus/src/main/java");
         gc.setAuthor("QR");
         gc.setOpen(false);
         gc.setSwagger2(true);
@@ -49,7 +61,7 @@ public class CodeGenerator {
 
         // 数据源配置
         DataSourceConfig dsc = new DataSourceConfig();
-        dsc.setUrl("jdbc:mysql://localhost:3306/qrblog?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=Asia/Shanghai");
+        dsc.setUrl("jdbc:mysql://localhost:3306/dtrd?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=Asia/Shanghai");
         dsc.setDriverName("com.mysql.cj.jdbc.Driver");
         dsc.setUsername("QR");
         dsc.setPassword("QRWUDI666");
@@ -57,11 +69,10 @@ public class CodeGenerator {
 
         // 包配置, 基本上都是设置对应的包名
         PackageConfig pc = new PackageConfig();
-        pc.setParent("qrl.spring.boot.mybatis.plus");
+        pc.setParent("qrl.spring.boot.mybatis.plus.modules." + MODULE_NAME);
         pc.setEntity("entity.po");
         pc.setMapper("mapper");
         pc.setService("service");
-        pc.setController("controller");
         mpg.setPackageInfo(pc);
 
         // 如果不是用默认的 Velocity 引擎, 需要手动设置模板引擎
@@ -70,24 +81,18 @@ public class CodeGenerator {
 
         // 设置生成模板, 大部分情况用默认的模板就足够了, 如果不够可以在 com.baomidou:mybatis-plus-generator 包下扣出模板来改
         TemplateConfig templateConfig = new TemplateConfig();
-        templateConfig.setXml("template/mapper.xml");
-        templateConfig.setController("template/controller.java");
         mpg.setTemplate(templateConfig);
 
         // 策略配置, 可以设置 controller service mapper 等的父类等
         StrategyConfig strategy = new StrategyConfig();
         strategy.setNaming(NamingStrategy.underline_to_camel);
         strategy.setColumnNaming(NamingStrategy.underline_to_camel);
-        strategy.setEntityLombokModel(true);
         strategy.setRestControllerStyle(true); // RestController, 记得要开!
         // 设置要自动生成代码的表, 可以利用 .split() 或者 直接传入一个字符串数组指定多个表
-        strategy.setInclude(tables);
+        strategy.setInclude(TABLES);
         strategy.setControllerMappingHyphenStyle(true);
-        strategy.setTablePrefix(tablePrefix);
-        strategy.setSuperControllerClass(BaseController.class);
-        strategy.setChainModel(true);       // 构造者模式
         strategy.setEntityLombokModel(true);        // lombok 模型
-        strategy.setLogicDeleteFieldName("deleted");
+        strategy.setLogicDeleteFieldName("is_del");
         mpg.setStrategy(strategy);
 
         // 执行自动配置
