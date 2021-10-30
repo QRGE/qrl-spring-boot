@@ -11,12 +11,12 @@
         <module>spring-bean</module>
         <module>spring-boot-redis</module>
         <module>spring-boot-mybatis-plus</module>
-        <module>spring-boot-jeecg</module>
         <module>spring-boot-quartz</module>
         <module>spring-boot-swagger</module>
         <module>spring-boot-test</module>
         <module>check</module>
         <module>basic</module>
+        <module>http</module>
     </modules>
 
     <name>qrl-spring-boot</name>
