@@ -10,10 +10,10 @@ import qrl.spring.boot.bean.aware.AwareService;
  * @Date: 2021/8/18-12:40
  */
 @SpringBootApplication
-public class Application {
+public class SpringBasicApplication {
 
     public static void main(String[] args) {
-        ConfigurableApplicationContext context = SpringApplication.run(Application.class, args);
+        ConfigurableApplicationContext context = SpringApplication.run(SpringBasicApplication.class, args);
         AwareService service = context.getBean(AwareService.class);
         service.outputResult();
     }

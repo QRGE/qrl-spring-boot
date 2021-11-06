@@ -8,10 +8,10 @@
     <version>1.0</version>
     <modules>
         <module>spring-boot-shiro</module>
-        <module>spring-bean</module>
+        <module>spring-basic</module>
         <module>spring-boot-redis</module>
         <module>spring-boot-mybatis-plus</module>
-        <module>spring-boot-quartz</module>
+        <module>quartz</module>
         <module>spring-boot-swagger</module>
         <module>spring-boot-test</module>
         <module>check</module>

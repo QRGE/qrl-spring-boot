@@ -8,9 +8,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @Date: 2021/9/29-13:09
  */
 @SpringBootApplication
-public class Check {
+public class CheckApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(Check.class, args);
+        SpringApplication.run(CheckApplication.class, args);
     }
 }
