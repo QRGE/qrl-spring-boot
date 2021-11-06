@@ -1,4 +1,4 @@
-package org.qrl.common.util;
+package org.qrl.web.basic.util;
 
 /**
  * mybatis-plus 3.5.1 以上适用

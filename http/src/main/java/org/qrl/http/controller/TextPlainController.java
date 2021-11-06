@@ -1,7 +1,7 @@
 package org.qrl.http.controller;
 
 import io.swagger.annotations.ApiOperation;
-import org.qrl.common.api.vo.Result;
+import org.qrl.web.basic.vo.Result;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

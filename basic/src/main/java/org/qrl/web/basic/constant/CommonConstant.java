@@ -1,4 +1,4 @@
-package org.qrl.common.constant;
+package org.qrl.web.basic.constant;
 
 @SuppressWarnings("unused")
 public interface CommonConstant {

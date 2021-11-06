@@ -20,7 +20,7 @@
     </modules>
 
     <name>qrl-spring-boot</name>
-    <description>学习 spring 及 spring-boot 的一些笔记和demo</description>
+    <description>java 学习笔记</description>
 
     <properties>
         <java.version>1.8</java.version>
@@ -45,14 +45,6 @@
             <releases>
                 <enabled>true</enabled>
             </releases>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-        <repository>
-            <id>jeecg</id>
-            <name>jeecg Repository</name>
-            <url>http://maven.jeecg.org/nexus/content/repositories/jeecg</url>
             <snapshots>
                 <enabled>false</enabled>
             </snapshots>

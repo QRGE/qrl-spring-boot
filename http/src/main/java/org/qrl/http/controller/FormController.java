@@ -2,9 +2,9 @@ package org.qrl.http.controller;
 
 import cn.hutool.json.JSONArray;
 import cn.hutool.json.JSONUtil;
-import org.qrl.common.api.vo.Result;
 import org.qrl.http.entity.dto.XtyPushBaseRequest;
 import org.qrl.http.entity.dto.XtySugarRecord;
+import org.qrl.web.basic.vo.Result;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

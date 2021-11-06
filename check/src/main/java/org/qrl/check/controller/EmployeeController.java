@@ -1,7 +1,7 @@
 package org.qrl.check.controller;
 
 import org.qrl.check.entity.po.Employee;
-import org.qrl.common.api.vo.Result;
+import org.qrl.web.basic.vo.Result;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

@@ -1,10 +1,8 @@
 package org.qrl.check.controller;
 
 import org.qrl.check.entity.dto.DepartmentDTO;
-import org.qrl.common.api.vo.Result;
-import org.springframework.validation.FieldError;
+import org.qrl.web.basic.vo.Result;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.constraints.Positive;

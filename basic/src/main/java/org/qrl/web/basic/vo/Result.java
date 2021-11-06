@@ -1,16 +1,13 @@
-package org.qrl.common.api.vo;
+package org.qrl.web.basic.vo;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
-import org.qrl.common.constant.CommonConstant;
+import org.qrl.web.basic.constant.CommonConstant;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
-
-
 
 @SuppressWarnings("unused")
 @ApiModel(value="接口返回对象", description="接口返回对象")

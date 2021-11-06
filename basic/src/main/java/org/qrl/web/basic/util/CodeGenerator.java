@@ -1,13 +1,10 @@
-package org.qrl.common.util;
+package org.qrl.web.basic.util;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.generator.AutoGenerator;
 import com.baomidou.mybatisplus.generator.config.*;
-import com.baomidou.mybatisplus.generator.config.rules.DateType;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
-
-import java.time.LocalDateTime;
 
 /**
  * @Author: QR
@@ -43,12 +40,12 @@ public class CodeGenerator {
         GlobalConfig gc = new GlobalConfig();
         gc.setOutputDir(PROJECT_PATH + "/" + PROJECT_MODULE_NAME +"/src/main/java");
         gc.setAuthor("QR");
-        // 日期类型
-        gc.setDateType(DateType.ONLY_DATE);
         // id 类型
         gc.setIdType(IdType.AUTO);
+        // 生成代码后是否打开代码所在目录
         gc.setOpen(false);
-        gc.setSwagger2(true);
+        // swagger 注解开启
+        gc.setSwagger2(false);
         // 生成通用查询映射结果
         gc.setBaseResultMap(true);
         // 通用查询结果列
@@ -56,6 +53,7 @@ public class CodeGenerator {
         // 生成的代码文件覆盖原来的文件, 工作中一定要注意
         gc.setFileOverride(true);
         mpg.setGlobalConfig(gc);
+
         // 数据源配置
         DataSourceConfig dsc = new DataSourceConfig();
         dsc.setUrl("jdbc:mysql://localhost:3306/qrl-spring-boot?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=Asia/Shanghai");
@@ -63,6 +61,7 @@ public class CodeGenerator {
         dsc.setUsername("QR");
         dsc.setPassword("QRWUDI666");
         mpg.setDataSource(dsc);
+
         // 包配置, 基本上都是设置对应的包名
         PackageConfig pc = new PackageConfig();
         pc.setParent("org.qrl.check.modules." + FUNCTION_MODULE_NAME);
@@ -70,13 +69,20 @@ public class CodeGenerator {
         pc.setMapper("mapper");
         pc.setService("service");
         pc.setController("controller");
-
         mpg.setPackageInfo(pc);
+
         // 如果不是用默认的 Velocity 引擎, 需要手动设置模板引擎
         mpg.setTemplateEngine(new FreemarkerTemplateEngine());
+
         // 设置生成模板, 大部分情况用默认的模板就足够了, 如果不够可以在 com.baomidou:mybatis-plus-generator 包下扣出模板来改
         TemplateConfig templateConfig = new TemplateConfig();
+        templateConfig.setController("template/controller.java");
+        templateConfig.setEntity("template/entity.java");
+        templateConfig.setMapper("template/mapper.java");
+        templateConfig.setService("template/service.java");
+        templateConfig.setServiceImpl("template/serviceImpl.java");
         mpg.setTemplate(templateConfig);
+
         // 策略配置, 可以设置 controller service mapper 等的父类等
         StrategyConfig strategy = new StrategyConfig();
         strategy.setNaming(NamingStrategy.underline_to_camel);
@@ -91,6 +97,7 @@ public class CodeGenerator {
         // 逻辑删除字段
         strategy.setLogicDeleteFieldName("is_del");
         mpg.setStrategy(strategy);
+
         // 执行自动配置
         mpg.execute();
     }
