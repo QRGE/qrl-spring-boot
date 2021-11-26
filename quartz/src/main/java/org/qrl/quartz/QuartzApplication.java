@@ -1,4 +1,4 @@
-package qrl.spring.boot.quartz;
+package org.qrl.quartz;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

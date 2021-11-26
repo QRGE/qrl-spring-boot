@@ -1,4 +1,4 @@
-package qrl.spring.boot.quartz.util;
+package org.qrl.quartz.util;
 
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;

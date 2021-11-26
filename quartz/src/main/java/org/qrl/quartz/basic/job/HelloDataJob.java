@@ -1,4 +1,4 @@
-package qrl.spring.boot.quartz.quartz.job;
+package org.qrl.quartz.basic.job;
 
 import org.quartz.*;
 

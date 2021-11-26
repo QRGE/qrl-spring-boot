@@ -8,7 +8,7 @@
     <version>1.0</version>
     <modules>
         <module>spring-boot-shiro</module>
-        <module>spring-basic</module>
+        <module>spring-core</module>
         <module>spring-boot-redis</module>
         <module>spring-boot-mybatis-plus</module>
         <module>quartz</module>

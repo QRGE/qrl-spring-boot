@@ -1,8 +1,8 @@
-package qrl.spring.boot.quartz.quartz;
+package org.qrl.quartz.basic;
 
+import org.qrl.quartz.basic.job.HelloJob;
 import org.quartz.*;
 import org.quartz.impl.StdSchedulerFactory;
-import qrl.spring.boot.quartz.quartz.job.HelloJob;
 
 import java.util.concurrent.TimeUnit;
 
@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit;
  * @Author: QR
  * @Date: 2021/9/6-14:27
  */
-public class _01_quartz_start {
+public class _01_start {
     public static void main(String[] args) {
         try {
             Scheduler scheduler = StdSchedulerFactory.getDefaultScheduler();

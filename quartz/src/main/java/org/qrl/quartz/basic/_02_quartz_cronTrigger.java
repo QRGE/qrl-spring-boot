@@ -1,8 +1,8 @@
-package qrl.spring.boot.quartz.quartz;
+package org.qrl.quartz.basic;
 
+import org.qrl.quartz.basic.job.HelloJob;
 import org.quartz.*;
 import org.quartz.impl.StdSchedulerFactory;
-import qrl.spring.boot.quartz.quartz.job.HelloJob;
 
 import java.util.concurrent.TimeUnit;
 

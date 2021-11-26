@@ -52,6 +52,8 @@ public class CodeGenerator {
         gc.setBaseColumnList(true);
         // 生成的代码文件覆盖原来的文件, 工作中一定要注意
         gc.setFileOverride(true);
+
+        gc.setActiveRecord(true);
         mpg.setGlobalConfig(gc);
 
         // 数据源配置
@@ -64,7 +66,7 @@ public class CodeGenerator {
 
         // 包配置, 基本上都是设置对应的包名
         PackageConfig pc = new PackageConfig();
-        pc.setParent("org.qrl.check.modules." + FUNCTION_MODULE_NAME);
+        pc.setParent("org.qrl." + PROJECT_MODULE_NAME + ".modules." + FUNCTION_MODULE_NAME);
         pc.setEntity("entity.po");
         pc.setMapper("mapper");
         pc.setService("service");
