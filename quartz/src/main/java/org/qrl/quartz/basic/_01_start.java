@@ -7,6 +7,8 @@ import org.quartz.impl.StdSchedulerFactory;
 import java.util.concurrent.TimeUnit;
 
 /**
+ * scheduler -> trigger -> jobDetail -> job
+ * 一个 trigger 只能关联到一个
  * @Author: QR
  * @Date: 2021/9/6-14:27
  */
