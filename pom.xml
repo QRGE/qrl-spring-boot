@@ -17,6 +17,7 @@
         <module>check</module>
         <module>basic</module>
         <module>http</module>
+        <module>spring-security</module>
     </modules>
 
     <name>qrl-spring-boot</name>
@@ -36,6 +37,7 @@
         <hibernate-validator>7.0.1.Final</hibernate-validator>
         <freemarker.version>2.3.31</freemarker.version>
         <hutool.version>5.7.13</hutool.version>
+        <qr.spring.boot.version>1.0</qr.spring.boot.version>
     </properties>
 
     <repositories>
@@ -92,11 +94,6 @@
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger-ui</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>qr.learn</groupId>
-            <artifactId>basic</artifactId>
-            <version>1.0</version>
         </dependency>
         <dependency>
             <groupId>com.baomidou</groupId>
@@ -172,6 +169,11 @@
                 <groupId>org.freemarker</groupId>
                 <artifactId>freemarker</artifactId>
                 <version>${freemarker.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>qr.learn</groupId>
+                <artifactId>basic</artifactId>
+                <version>${qr.spring.boot.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

@@ -1,16 +1,16 @@
-package qrl.spring.boot.mybatis.plus;
+package org.qrl.spring.security;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * @Author: QR
- * @Date: 2021/9/1-10:13
+ * @author qr
+ * @date 2021/12/18 20:16
  */
 @SpringBootApplication
-public class Application {
+public class SpringSecurityApp {
 
     public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
+        SpringApplication.run(SpringSecurityApp.class, args);
     }
 }

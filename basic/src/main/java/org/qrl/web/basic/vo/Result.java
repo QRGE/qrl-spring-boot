@@ -3,7 +3,8 @@ package org.qrl.web.basic.vo;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import org.qrl.web.basic.constant.CommonConstant;
 
 import java.io.Serializable;
@@ -11,7 +12,8 @@ import java.time.LocalDateTime;
 
 @SuppressWarnings("unused")
 @ApiModel(value="接口返回对象", description="接口返回对象")
-@Data
+@Getter
+@Setter
 public class Result<T> implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -23,7 +25,7 @@ public class Result<T> implements Serializable {
 	private String message = "操作成功!";
 
 	@ApiModelProperty(value = "返回代码")
-	private Integer code = 0;
+	private Integer code;
 
 	@ApiModelProperty(value = "返回数据对象")
 	private T result;
@@ -31,8 +33,6 @@ public class Result<T> implements Serializable {
 	@ApiModelProperty(value = "返回时间")
 	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "Asia/Shanghai")
 	private LocalDateTime date = LocalDateTime.now();
-
-	public Result() {}
 
 	public static<T> Result<T> OK() {
 		Result<T> r = new Result<>();
