@@ -1,6 +1,7 @@
 package org.qrl.spring.security.controller;
 
 import org.qrl.web.basic.vo.Result;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,5 +17,10 @@ public class SecurityController {
     @PostMapping("/login")
     public Result<?> test() {
         return Result.OK("登陆成功");
+    }
+
+    @GetMapping("/hello")
+    public Result<?> hello() {
+        return Result.OK("Hello");
     }
 }
