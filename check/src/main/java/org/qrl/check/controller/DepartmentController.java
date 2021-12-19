@@ -1,7 +1,7 @@
 package org.qrl.check.controller;
 
+import org.qrl.basic.vo.Result;
 import org.qrl.check.entity.dto.DepartmentDTO;
-import org.qrl.web.basic.vo.Result;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 

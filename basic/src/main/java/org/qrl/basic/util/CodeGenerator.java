@@ -1,4 +1,4 @@
-package org.qrl.web.basic.util;
+package org.qrl.basic.util;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.generator.AutoGenerator;

@@ -1,7 +1,7 @@
-package org.qrl.web.basic.constant;
+package org.qrl.basic.constant;
 
 @SuppressWarnings("unused")
-public interface CommonConstant {
+public interface Constant {
 
 	/**
 	 * 正常状态
@@ -16,12 +16,12 @@ public interface CommonConstant {
 	/**
 	 * 删除标志
 	 */
-    Integer DEL_FLAG_1 = 1;
+    Integer IS_DEL_1 = 1;
 
 	/**
 	 * 未删除
 	 */
-    Integer DEL_FLAG_0 = 0;
+    Integer IS_DEL_0 = 0;
 
 	/**
 	 * 系统日志类型： 登录
@@ -36,62 +36,66 @@ public interface CommonConstant {
 	/**
 	 * 操作日志类型： 查询
 	 */
-    int OPERATE_TYPE_1 = 1;
+    int OPERATE_TYPE_QUERY = 1;
 	
 	/**
 	 * 操作日志类型： 添加
 	 */
-    int OPERATE_TYPE_2 = 2;
+    int OPERATE_TYPE_ADD = 2;
 	
 	/**
 	 * 操作日志类型： 更新
 	 */
-    int OPERATE_TYPE_3 = 3;
+    int OPERATE_TYPE_UPDATE = 3;
 	
 	/**
 	 * 操作日志类型： 删除
 	 */
-    int OPERATE_TYPE_4 = 4;
+    int OPERATE_TYPE_REMOVE = 4;
+
+    /**
+     * 操作日志类型：新增或修改
+     */
+    int OPERATE_TYPE_SAVE_OR_UPDATE = 5;
 	
 	/**
 	 * 操作日志类型： 倒入
 	 */
-    int OPERATE_TYPE_5 = 5;
+    int OPERATE_TYPE_IMPORT = 6;
 	
 	/**
 	 * 操作日志类型： 导出
 	 */
-    int OPERATE_TYPE_6 = 6;
+    int OPERATE_TYPE_EXPORT = 7;
 	
 	
-	/** {@code 500 Server Error} (HTTP/1.0 - RFC 1945) */
+	/**
+     * {@code 500 Server Error} (HTTP/1.0 - RFC 1945)
+     * */
     Integer SC_INTERNAL_SERVER_ERROR_500 = 500;
-    /** {@code 200 OK} (HTTP/1.0 - RFC 1945) */
+
+    /**
+     * {@code 200 OK} (HTTP/1.0 - RFC 1945)
+     * */
     Integer SC_OK_200 = 200;
     
     /**访问权限认证未通过 510*/
-    Integer SC_JEECG_NO_AUTHZ=510;
+    Integer SC_NO_AUTH =510;
 
-    /** 登录用户Shiro权限缓存KEY前缀 */
+    /**
+     * 登录用户Shiro权限缓存KEY前缀
+     * */
     String PREFIX_USER_SHIRO_CACHE  = "shiro:cache:ShiroRealm.authorizationCache:";
-    /** 登录用户Token令牌缓存KEY前缀 */
-    String PREFIX_USER_TOKEN  = "prefix_user_token_";
-    /** Token缓存时间：3600秒即一小时 */
-    int  TOKEN_EXPIRE_TIME  = 3600;
-    
 
     /**
-     *  0：一级菜单
-     */
-    Integer MENU_TYPE_0  = 0;
-   /**
-    *  1：子菜单 
-    */
-   Integer MENU_TYPE_1  = 1;
+     * 登录用户Token令牌缓存KEY前缀
+     * */
+    String PREFIX_USER_TOKEN  = "prefix_user_token_";
+
     /**
-     *  2：按钮权限
-     */
-    Integer MENU_TYPE_2  = 2;
+     * Token缓存时间：3600s，即一小时
+     * */
+    int  TOKEN_EXPIRE_TIME  = 3600;
     
     /**通告对象类型（USER:指定用户，ALL:全体用户）*/
     String MSG_TYPE_USER = "USER";
@@ -152,91 +156,24 @@ public interface CommonConstant {
     String DICT_TEXT_SUFFIX = "_dictText";
 
     /**
-     * 表单设计器主表类型
-     */
-    Integer DESIGN_FORM_TYPE_MAIN = 1;
-
-    /**
-     * 表单设计器子表表类型
-     */
-    Integer DESIGN_FORM_TYPE_SUB = 2;
-
-    /**
-     * 表单设计器URL授权通过
-     */
-    Integer DESIGN_FORM_URL_STATUS_PASSED = 1;
-
-    /**
-     * 表单设计器URL授权未通过
-     */
-    Integer DESIGN_FORM_URL_STATUS_NOT_PASSED = 2;
-
-    /**
-     * 表单设计器新增 Flag
-     */
-    String DESIGN_FORM_URL_TYPE_ADD = "add";
-    /**
-     * 表单设计器修改 Flag
-     */
-    String DESIGN_FORM_URL_TYPE_EDIT = "edit";
-    /**
-     * 表单设计器详情 Flag
-     */
-    String DESIGN_FORM_URL_TYPE_DETAIL = "detail";
-    /**
-     * 表单设计器复用数据 Flag
-     */
-    String DESIGN_FORM_URL_TYPE_REUSE = "reuse";
-
-
-    /**
-     * online参数值设置（是：Y, 否：N）
-     */
-    String ONLINE_PARAM_VAL_IS_TURE = "Y";
-    String ONLINE_PARAM_VAL_IS_FALSE = "N";
-
-    /**
-     * 文件上传类型（本地：local，Minio：minio，阿里云：alioss）
+     * 文件上传类型（本地：local，阿里云：alioss）
      */
     String UPLOAD_TYPE_LOCAL = "local";
-    String UPLOAD_TYPE_MINIO = "minio";
     String UPLOAD_TYPE_OSS = "alioss";
 
     /**
      * 文档上传自定义桶名称
      */
-    String UPLOAD_CUSTOM_BUCKET = "eoafile";
+    String UPLOAD_CUSTOM_BUCKET = "eoa-file";
     /**
      * 文档上传自定义路径
      */
-    String UPLOAD_CUSTOM_PATH = "eoafile";
+    String UPLOAD_CUSTOM_PATH = "eoa-file";
     /**
      * 文件外链接有效天数
      */
     Integer UPLOAD_EFFECTIVE_DAYS = 1;
 
-    /**
-     * 员工身份 （1:普通员工  2:上级）
-     */
-    Integer USER_IDENTITY_1 = 1;
-    Integer USER_IDENTITY_2 = 2;
-
-    /** sys_user 表 username 唯一键索引 */
-    String SQL_INDEX_UNIQ_SYS_USER_USERNAME = "uniq_sys_user_username";
-    /** sys_user 表 work_no 唯一键索引 */
-    String SQL_INDEX_UNIQ_SYS_USER_WORK_NO = "uniq_sys_user_work_no";
-    /** sys_user 表 phone 唯一键索引 */
-    String SQL_INDEX_UNIQ_SYS_USER_PHONE = "uniq_sys_user_phone";
-    /** sys_user 表 email 唯一键索引 */
-    String SQL_INDEX_UNIQ_SYS_USER_EMAIL = "uniq_sys_user_email";
-    /** sys_quartz_job 表 job_class_name 唯一键索引 */
-    String SQL_INDEX_UNIQ_JOB_CLASS_NAME = "uniq_job_class_name";
-    /** sys_position 表 code 唯一键索引 */
-    String SQL_INDEX_UNIQ_CODE = "uniq_code";
-    /** sys_role 表 code 唯一键索引 */
-    String SQL_INDEX_UNIQ_SYS_ROLE_CODE = "uniq_sys_role_role_code";
-    /** sys_depart 表 code 唯一键索引 */
-    String SQL_INDEX_UNIQ_DEPART_ORG_CODE = "uniq_depart_org_code";
     /**
      * 在线聊天 是否为默认分组
      */
@@ -274,11 +211,11 @@ public interface CommonConstant {
     /**
      * 公文文档上传自定义路径
      */
-    String UPLOAD_CUSTOM_PATH_OFFICIAL = "officialdoc";
+    String UPLOAD_CUSTOM_PATH_OFFICIAL = "official-doc";
      /**
      * 公文文档下载自定义路径
      */
-     String DOWNLOAD_CUSTOM_PATH_OFFICIAL = "officaldown";
+     String DOWNLOAD_CUSTOM_PATH_OFFICIAL = "official-down";
 
     /**
      * WPS存储值类别(1 code文号 2 text（WPS模板还是公文发文模板）)
@@ -286,34 +223,7 @@ public interface CommonConstant {
     String WPS_TYPE_1="1";
     String WPS_TYPE_2="2";
 
-
-    String X_ACCESS_TOKEN = "X-Access-Token";
-    String X_SIGN = "X-Sign";
-    String X_TIMESTAMP = "X-TIMESTAMP";
-
-    /**
-     * 多租户 请求头
-     */
-    String TENANT_ID = "tenant-id";
-
-    /**
-     * 微服务读取配置文件属性 服务地址
-     */
-    String CLOUD_SERVER_KEY = "spring.cloud.nacos.discovery.server-addr";
-
-    /**
-     * 第三方登录 验证密码/创建用户 都需要设置一个操作码 防止被恶意调用
-     */
-    String THIRD_LOGIN_CODE = "third_login_code";
-
-    /**
-     * 第三方APP同步方向：本地 --> 第三方APP
-     */
-    String THIRD_SYNC_TO_APP = "SYNC_TO_APP";
-    /**
-     * 第三方APP同步方向：第三方APP --> 本地
-     */
-    String THIRD_SYNC_TO_LOCAL = "SYNC_TO_LOCAL";
+    String X_ACCESS_TOKEN = "token";
 
     /** 系统通告消息状态：0=未发布 */
     String ANNOUNCEMENT_SEND_STATUS_0 = "0";

@@ -1,6 +1,6 @@
 package org.qrl.check.config;
 
-import org.qrl.web.basic.vo.Result;
+import org.qrl.basic.vo.Result;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;

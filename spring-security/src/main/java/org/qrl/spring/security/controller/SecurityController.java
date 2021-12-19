@@ -1,6 +1,6 @@
 package org.qrl.spring.security.controller;
 
-import org.qrl.web.basic.vo.Result;
+import org.qrl.basic.vo.Result;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
