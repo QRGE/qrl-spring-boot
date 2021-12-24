@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
     <description>学习 spring-security</description>
 
-    <artifactId>spring-security</artifactId>
+    <artifactId>qrl-spring-security</artifactId>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
