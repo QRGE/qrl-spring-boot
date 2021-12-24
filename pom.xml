@@ -18,6 +18,7 @@
         <module>basic</module>
         <module>http</module>
         <module>spring-security</module>
+        <module>mail</module>
     </modules>
 
     <name>qrl-spring-boot</name>
