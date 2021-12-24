@@ -3,7 +3,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>qr.learn</groupId>
-    <artifactId>qrl-spring-boot</artifactId>
+    <artifactId>qrl-web</artifactId>
     <packaging>pom</packaging>
     <version>1.0</version>
     <modules>
@@ -102,7 +102,7 @@
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-annotation</artifactId>
-            <version>3.4.1</version>
+            <version>3.4.3.4</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
