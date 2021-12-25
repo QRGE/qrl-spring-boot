@@ -9,6 +9,7 @@ import javax.mail.internet.MimeMessage;
 import java.util.Properties;
 
 /**
+ * ss
  * @author qr
  * @date 2021/12/24 15:16
  */
