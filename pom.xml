@@ -19,6 +19,7 @@
         <module>http</module>
         <module>spring-security</module>
         <module>mail</module>
+        <module>auto-config</module>
     </modules>
 
     <name>qrl-spring-boot</name>
